@@ -26,7 +26,7 @@ int main()
 
     DWORD oldPerms;
     char* buffer = (char*)VirtualAlloc(NULL, sizeof(shellcode), MEM_COMMIT, PAGE_EXECUTE_READ);
-    printf("Allocated Read-only memory at %p\n", buffer);
+    printf("Allocated non-writable memory at %p\n", buffer);
 
 
     if (!WriteProcessMemory(GetCurrentProcess(), buffer, shellcode, sizeof(shellcode), NULL)) {
