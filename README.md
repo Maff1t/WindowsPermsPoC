@@ -6,7 +6,7 @@ You can build it using Visual Studio.
 
 This simple program, allocate a non-writable piece of memory using VirtualAlloc and writes a shellcode inside of it, using WriteProcessMemory.
 
-This is made possible by the fact that WriteProcessMemory is a function designed for debuggers so, under the hood, it changes permissions and restores them at the end.
+This is made possible by the fact that WriteProcessMemory is a function designed for debuggers so, under the hood, it changes permissions (calling syscall NtVirtualProtectMemory) and restores them at the end.
 
 ### Executing non-executable memory
 
